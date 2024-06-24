@@ -1,0 +1,68 @@
+- Overview
+This document provides a detailed guide to the Cypress framework designed for automated testing of the Virgin Media homepage. 
+The framework uses Cypress with BDD (Behavior-Driven Development) Cucumber preprocessor and includes several features to ensure comprehensive and maintainable test automation.
+
+- Folder Structure
+The framework is organized as follows:
+
+cypress/
+  ├── downloads/
+  ├── features/
+  │   └── Homepage.feature
+  ├── fixtures/
+  ├── results/
+  ├── screenshots/
+  ├── support/
+  │   ├── pageObjects/
+  │   │   └── homePage.js
+  │   ├── step_definitions/
+  │   │   └── homePageSteps.js
+  │   ├── commands.js
+  │   └── e2e.js
+  ├── videos/
+cypress.config.js
+package.json
+
+- Tools and Technologies
+Cypress: Test automation framework for end-to-end testing.
+BDD Cucumber Preprocessor: Allows writing tests in Gherkin syntax.
+Mochawesome: Reporter for generating test reports.
+Esbuild Preprocessor: For faster builds.
+Cypress-axe: For accessibility testing.
+Cypress-real-events: For simulating real user events.
+Soft-assert: For soft assertions in tests.
+
+- Key Features
+BDD Style Tests: Tests are written in Gherkin syntax, making them readable and understandable by non-technical stakeholders.
+Page Object Model (POM): Organized structure for page interactions encapsulated in page objects.
+Detailed Reports: Test results are captured using Mochawesome, providing detailed HTML reports.
+Accessibility Testing: Integrated cypress-axe for checking compliance with WCAG 2.1 standards.
+Responsive Design Testing: Validates layout adaptability across different devices.
+
+- Running Tests
+Open Cypress: npm run cy:open
+Run Tests in Chrome: npm run test:chrome
+Run All Tests: npm test
+
+- Continuous Integration (CI)
+Integrate with CI tools like GitHub Actions:
+
+yaml
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Cypress Tests
+        run: npm test
+
+- Conclusion
+This Cypress framework provides a comprehensive setup for automated testing of the Virgin Media homepage, covering functional, responsive, and accessibility testing. 
+The use of BDD with Cucumber ensures that tests are readable and maintainable.

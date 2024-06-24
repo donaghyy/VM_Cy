@@ -1,0 +1,31 @@
+{
+  "name": "VirginMedia Cy",
+  "version": "1.0.0",
+  "description": "Cypress framework with BDD cucumber, for VM technical test",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "cypress run",
+    "cy:open": "cypress open",
+    "test:chrome": "cypress run --browser chrome"
+  },
+  "keywords": [],
+  "author": "David Donaghy",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^16.0.3",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^13.12.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/support/step_definitions/",
+    "nonGlobalStepDefinitions": false
+  },
+  "dependencies": {
+    "axe-core": "^4.9.1",
+    "cypress-axe": "^1.5.0",
+    "cypress-real-events": "^1.13.0",
+    "soft-assert": "^0.2.7"
+  }
+}
